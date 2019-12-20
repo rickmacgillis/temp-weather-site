@@ -9,7 +9,7 @@ searchButton.addEventListener('click', (e) => {
 
     const location = searchTerm.value;
     messageOne.textContent = 'Loading...';
-    fetch('http://localhost:3000/weather?address=' + encodeURIComponent(location)).then((response) => {
+    fetch('/weather?address=' + encodeURIComponent(location)).then((response) => {
     
         response.json().then(({error, location, forecast}) => {
             

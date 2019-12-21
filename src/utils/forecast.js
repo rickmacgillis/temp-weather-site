@@ -17,10 +17,13 @@ module.exports = (lat, long, callback) => {
         } else {
 
             const currently = body.currently;
-            const daily = body.daily;
+            const daily = body.daily.data[0];
+            const summary = daily.summary;
+            const low = daily.temperatureMin;
+            const high = daily.temperatureMax;
 
-            const data = daily.data[0].summary +
-                ' It is currently ' + currently.temperature + ' degrees out. There is a ' + currently.precipProbability + '% chance of rain.';
+            const data = summary +
+                ' It is currently ' + currently.temperature + ' degrees out. There is a ' + currently.precipProbability + '% chance of rain. The high for the day is ' + high + ' and the low is ' + low;
 
             callback(undefined, data);
 

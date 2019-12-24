@@ -23,7 +23,9 @@ module.exports = (lat, long, callback) => {
             const high = daily.temperatureMax;
 
             const data = summary +
-                ' It is currently ' + currently.temperature + ' degrees out. There is a ' + currently.precipProbability + '% chance of rain. The high for the day is ' + high + ' and the low is ' + low;
+                ' It is currently ' + currently.temperature + ' degrees out. ' +
+                'The high today is ' + high + ' with a low of ' + low + '. ' +
+                'There is a ' + currently.precipProbability + '% chance of rain. ';
 
             callback(undefined, data);
 

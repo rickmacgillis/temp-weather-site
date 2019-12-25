@@ -3,7 +3,7 @@ const request = require('request');
 module.exports = (lat, long, callback) => {
 
     const coords = lat + ',' + long;
-    const weatherUrl = 'https://api.darksky.net/forecast/9dc5ed8e8e49f68aa132d3ba360bb77b/' + encodeURIComponent(coords);
+    const weatherUrl = 'https://api.darksky.net/forecast/' + process.env.DARKSKY_API_KEY + '/' + encodeURIComponent(coords);
 
     request({
         url: weatherUrl,

@@ -5,7 +5,7 @@ const hbs = require('hbs');
 const weather = require('./utils/weather');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 
 const publicDir = path.join(__dirname, '../public');
 const viewsPath = path.join(__dirname, '../views/layouts');

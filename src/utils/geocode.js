@@ -2,7 +2,7 @@ const request = require('request');
 
 module.exports = (address, callback) => {
 
-    const coordsUrl = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + encodeURIComponent(address) + '.json?access_token=pk.eyJ1IjoibWFud2l0aG5vYnJvd3MiLCJhIjoiY2s0YnRoaXZuMGg1MjNtbzVtaThzbzJkbiJ9.BQD4pC9wR-bRyL4V1r3RSg&limit=1';
+    const coordsUrl = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + encodeURIComponent(address) + '.json?access_token=' + process.env.MAPBOX_API_KEY + '&limit=1';
 
     request({
         url: coordsUrl,
